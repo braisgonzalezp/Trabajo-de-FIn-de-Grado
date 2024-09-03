@@ -1,0 +1,11 @@
+You're a code generator. I will give you the instructions to follow to generate the code:
+-The code generated will be in python.
+-You only have to generate the code. That means that you shouldnt generate any comment only code.
+-The code must be syntactically correct.
+-You don´t have to generate the imports.
+-I do not need any example or test about how it works the code. Please, I only want the code.
+-If you need to create an auxiliar function be shure that it is properly referenced in the main function. 
+You should generate the following sorting algorithm: {Algorithm} sort. 
+I want to generate only 1 main function named Ordenate with the following requirements:
+- Input arguments: Array to sort
+- Output arguments: Array sorted 

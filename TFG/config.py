@@ -1,0 +1,2 @@
+OPENAI_API_KEY = 'sk-proj-nsbnVOZnQdadNw4TU1nLT3BlbkFJHdmDpEbuArnfGJ3Do0yU'
+MISTRAL_API_KEY = '9yfQeaoGrUwrL6KPCC4pkmOXJzfx9j9i'

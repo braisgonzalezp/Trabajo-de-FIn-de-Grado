@@ -1,0 +1,26 @@
+import unittest
+import math
+
+
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
+def Ordenate(arr):
+    return bubble_sort(arr) 
+
+class TestBubbleSort(unittest.TestCase):
+
+    def test_bubble_sort(self):
+        self.assertEqual(Ordenate([3, 2, 1]), [1, 2, 3])
+        self.assertEqual(Ordenate([5, 8, 2, 1, 9]), [1, 2, 5, 8, 9])
+        self.assertEqual(Ordenate([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
+        self.assertEqual(Ordenate([5, 4, 3, 2, 1]), [1, 2, 3, 4, 5])
+        self.assertEqual(Ordenate([]), [])
+
+if __name__ == '__main__':
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)[INFO] The elapsed time was: 5.912281274795532 segundos

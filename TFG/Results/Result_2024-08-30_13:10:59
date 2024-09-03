@@ -1,0 +1,31 @@
+import unittest
+import math
+
+
+def Ordenate(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
+class TestBubbleSort(unittest.TestCase):
+
+    def test_empty_list(self):
+        self.assertEqual(Ordenate([]), [])
+
+    def test_sorted_list(self):
+        self.assertEqual(Ordenate([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
+
+    def test_reverse_sorted_list(self):
+        self.assertEqual(Ordenate([5, 4, 3, 2, 1]), [1, 2, 3, 4, 5])
+
+    def test_duplicate_elements(self):
+        self.assertEqual(Ordenate([3, 2, 1, 2, 3]), [1, 2, 2, 3, 3])
+
+    def test_negative_numbers(self):
+        self.assertEqual(Ordenate([-3, -2, -1, -4, -5]), [-5, -4, -3, -2, -1])
+
+if __name__ == '__main__':
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)[INFO] The elapsed time was: 6.226518392562866 segundos

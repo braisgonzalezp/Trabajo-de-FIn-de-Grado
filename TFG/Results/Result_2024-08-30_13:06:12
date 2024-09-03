@@ -1,0 +1,56 @@
+import unittest
+import math
+
+
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    mid = len(arr) // 2
+    left = arr[:mid]
+    right = arr[mid:]
+    
+    left = merge_sort(left)
+    right = merge_sort(right)
+    
+    return merge(left, right)
+
+def merge(left, right):
+    result = []
+    i = j = 0
+    
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    
+    result += left[i:]
+    result += right[j:]
+    
+    return result
+
+def Ordenate(arr):
+    return merge_sort(arr) 
+
+class TestMergeSort(unittest.TestCase):
+
+    def test_merge_sort_empty_list(self):
+        self.assertEqual(merge_sort([]), [])
+
+    def test_merge_sort_single_element(self):
+        self.assertEqual(merge_sort([5]), [5])
+
+    def test_merge_sort_sorted_list(self):
+        self.assertEqual(merge_sort([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
+
+    def test_merge_sort_reverse_sorted_list(self):
+        self.assertEqual(merge_sort([5, 4, 3, 2, 1]), [1, 2, 3, 4, 5])
+
+    def test_merge_sort_random_list(self):
+        self.assertEqual(merge_sort([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]), [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9])
+
+if __name__ == '__main__':
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)[INFO] The elapsed time was: 8.441333532333374 segundos

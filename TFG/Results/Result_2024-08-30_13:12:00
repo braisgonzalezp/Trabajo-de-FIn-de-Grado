@@ -1,0 +1,40 @@
+import unittest
+import math
+
+
+def Ordenate(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1] :
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr 
+
+class TestBubbleSort(unittest.TestCase):
+
+    def test_empty_array(self):
+        self.assertEqual(Ordenate([]), [])
+
+    def test_single_element_array(self):
+        self.assertEqual(Ordenate([1]), [1])
+
+    def test_sorted_array(self):
+        self.assertEqual(Ordenate([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
+
+    def test_reverse_sorted_array(self):
+        self.assertEqual(Ordenate([5, 4, 3, 2, 1]), [1, 2, 3, 4, 5])
+
+    def test_unsorted_array(self):
+        self.assertEqual(Ordenate([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]), [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9])
+
+    def test_array_with_duplicates(self):
+        self.assertEqual(Ordenate([1, 2, 3, 2, 1]), [1, 1, 2, 2, 3])
+
+    def test_array_with_negative_numbers(self):
+        self.assertEqual(Ordenate([-1, -2, -3, -4, -5]), [-5, -4, -3, -2, -1])
+
+    def test_array_with_mixed_positive_and_negative_numbers(self):
+        self.assertEqual(Ordenate([-1, 2, -3, 4, -5]), [-5, -3, -1, 2, 4])
+
+if __name__ == '__main__':
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)[INFO] The elapsed time was: 27.319679498672485 segundos

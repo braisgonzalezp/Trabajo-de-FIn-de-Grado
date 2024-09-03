@@ -1,0 +1,54 @@
+
+import math
+
+import unittest
+
+def Ordenate(arr):
+    if not arr:
+        return []
+
+    max_val = max(arr)
+    min_val = min(arr)
+    range_of_elements = max_val - min_val + 1
+
+    count_arr = [0] * range_of_elements
+    output_arr = [0] * len(arr)
+
+    for num in arr:
+        count_arr[num - min_val] += 1
+
+    for i in range(1, len(count_arr)):
+        count_arr[i] += count_arr[i - 1]
+
+    for num in reversed(arr):
+        output_arr[count_arr[num - min_val] - 1] = num
+        count_arr[num - min_val] -= 1
+
+    return output_arr
+
+class TestOrdenate(unittest.TestCase):
+
+    def test_empty_list(self):
+        self.assertEqual(Ordenate([]), [])
+
+    def test_single_element(self):
+        self.assertEqual(Ordenate([1]), [1])
+
+    def test_two_elements(self):
+        self.assertEqual(Ordenate([2, 1]), [1, 2])
+
+    def test_multiple_elements(self):
+        self.assertEqual(Ordenate([5, 2, 9, 1, 5, 6]), [1, 2, 5, 5, 6, 9])
+
+    def test_negative_elements(self):
+        self.assertEqual(Ordenate([-2, -5, -1]), [-5, -2, -1])
+
+    def test_mixed_positive_and_negative(self):
+        self.assertEqual(Ordenate([3, -2, 1, -1, 0]), [-2, -1, 0, 1, 3])
+
+    def test_duplicate_elements(self):
+        self.assertEqual(Ordenate([2, 2, 2, 1, 1, 1]), [1, 1, 1, 2, 2, 2])
+
+if __name__ == '__main__':
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)
+[INFO] The elapsed time was: 19.014641284942627 segundos

@@ -1,0 +1,38 @@
+Here is the test code for the merge sort algorithm:
+import math
+
+
+
+import unittest
+
+class TestMergeSort(unittest.TestCase):
+
+    def test_empty_array(self):
+        self.assertEqual(Ordenate([]), [])
+
+    def test_single_element_array(self):
+        self.assertEqual(Ordenate([1]), [1])
+
+    def test_sorted_array(self):
+        self.assertEqual(Ordenate([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
+
+    def test_reverse_sorted_array(self):
+        self.assertEqual(Ordenate([5, 4, 3, 2, 1]), [1, 2, 3, 4, 5])
+
+    def test_unsorted_array(self):
+        self.assertEqual(Ordenate([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]), [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9])
+
+    def test_array_with_duplicates(self):
+        self.assertEqual(Ordenate([1, 2, 3, 2, 1]), [1, 1, 2, 2, 3])
+
+    def test_array_with_negative_numbers(self):
+        self.assertEqual(Ordenate([-1, -2, -3, -4, -5]), [-5, -4, -3, -2, -1])
+
+    def test_array_with_mixed_positive_and_negative_numbers(self):
+        self.assertEqual(Ordenate([3, -1, 4, 1, -5, 9, 2, -6, 5, -3, 5]), [-6, -5, -3, -1, 1, 2, 3, 4, 5, 5, 9])
+
+if __name__ == '__main__':
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)
+
+
+This test code covers all possible scenarios including empty array, single element array, already sorted array, reverse sorted array, unsorted array, array with duplicate elements, array with negative numbers, and array with mixed positive and negative numbers.[INFO] The elapsed time was: 18.67811679840088 segundos
