@@ -16,7 +16,7 @@ def ReadParameters():
     if not VerifyParams():
      print("Usage: python main.py [ALGORITMO] [1|2] [3|4|5]\n"
           "\t ALGORITMO: <bubble> <merge> <counting>\n"
-          "\t 1: TEST GENERADOS POR GPT\n"
+          "\t 1: TEST GENERADOS POR LLM\n"
           "\t 2: TEST PRE-GENERADOS\n"
           "\t 3: GPT 3.5\n"
           "\t 4: GPT 4 \n"
