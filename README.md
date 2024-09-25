@@ -16,13 +16,16 @@ Para conseguirlo, se ha dividido en el trabajo en las siguientes tareas específ
   • Analizar el costo de la implementación de un LLM en un entorno grande para estudiar
   su viabilidad.
 
-## Ejecución del Prototipo:
+## Ejecución del Prototipo: 
 
+EN PRIMER LUGAR ES NECESARIO CUBRIR LAS API KEYS EN LA CLASE CONFIG.PY.
+ 
+  
   Usage: python main.py [ALGORITMO] [1|2] [3|4|5]
 
    ALGORITMO: bubble | merge | counting
     
-   1: TEST GENERADOS POR GPT 
+   1: TEST GENERADOS POR LLM 
  
    2: TEST PRE-GENERADOS
 	  
